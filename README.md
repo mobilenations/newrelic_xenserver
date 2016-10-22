@@ -11,7 +11,7 @@ Fetches metrics from Xen Hosts and VM and pushes to NewRelic over https.
 - Drive Activity (Throughput, IOPS, IO Wait, Latency)
 - Xen Hosts Data (XAPI Memory, dom0 load)
 
-The amount of metrics available will depend on your XenServer version.
+The amount of metrics available will depend on your XenServer version. 
 The module has been tested with Xen 6.2, 6.5 and 7.0.
 
 ----
@@ -32,21 +32,21 @@ The module has been tested with Xen 6.2, 6.5 and 7.0.
 Configure
 
 - xenConfig
-- Pool Master(s)
-- Username/Password (Same as XenCenter)
-- Specify timezone offset in tzOffset (if the timezone differs between the node.js server vs XenServers)
+    - Pool Master(s)
+    - Username/Password (Same as XenCenter)
+    - Specify timezone offset in tzOffset (if the timezone differs between the node.js server vs XenServers)
 
 - newRelicConfig
-- Newrelic license key and host name of the server this script will run it.
+    - Newrelic license key and host name of the server this script will run it.
 
 We use [PM2](http://pm2.keymetrics.io) as a node process manager, which enables node.js script to run forever,
 gather logs, and to run at boot.
 
-npm install pm2@latest -g
+npm install pm2@latest -g  
 pm2 start xen_monitor.js
 
-pm2 stop 0
-pm2 restart 0
+pm2 stop 0  
+pm2 restart 0  
 pm2 reload 0
 
 To start at boot: pm2 startup, followed by pm2 save
